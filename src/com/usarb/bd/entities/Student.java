@@ -1,4 +1,7 @@
-package com.usarb.bd;
+package com.usarb.bd.entities;
+
+import com.usarb.bd.entities.Discipline;
+import com.usarb.bd.entities.Group;
 
 import java.util.List;
 

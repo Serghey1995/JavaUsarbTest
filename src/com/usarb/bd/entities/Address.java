@@ -1,4 +1,4 @@
-package com.usarb.bd;
+package com.usarb.bd.entities;
 
 public class Address {
 private int id;
@@ -6,11 +6,12 @@ private String country;
 private String city;
 private String address;
 
+
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public  void setId(int id) {
         this.id = id;
     }
 

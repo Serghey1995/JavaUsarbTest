@@ -1,4 +1,4 @@
-package com.usarb.bd;
+package com.usarb.bd.entities;
 
 import java.util.Date;
 import java.util.List;

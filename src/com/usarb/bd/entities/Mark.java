@@ -1,10 +1,14 @@
-package com.usarb.bd;
+package com.usarb.bd.entities;
 
-public class Average {
+import java.util.Date;
+
+public class Mark {
     private int id;
     private Student student;
     private Discipline discipline;
+    private Teacher teacher;
     private double value;
+    private Date createdDate;
 
     public int getId() {
         return id;
@@ -30,11 +34,27 @@ public class Average {
         this.discipline = discipline;
     }
 
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
     public double getValue() {
         return value;
     }
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 }

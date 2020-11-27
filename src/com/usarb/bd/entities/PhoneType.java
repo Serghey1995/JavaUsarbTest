@@ -1,4 +1,4 @@
-package com.usarb.bd;
+package com.usarb.bd.entities;
 
 public class PhoneType {
     private int id;
