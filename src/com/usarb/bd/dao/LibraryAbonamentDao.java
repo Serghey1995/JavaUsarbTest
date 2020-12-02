@@ -10,24 +10,29 @@ import java.sql.SQLException;
 
 public class LibraryAbonamentDao {
     private static final String QUERY = "select * from library_abonaments where id =?";
+    private Connection connection;
+
+    public LibraryAbonamentDao(Connection connection) {
+        this.connection = connection;
+
+    }
 
     public LibraryAbonament getLibraryAbonament(int LibraryAbonamentId) throws SQLException {
         LibraryAbonament lb = new LibraryAbonament();
-        Connection connection = null;
-        //Доделать на 16 строчке код таким образов , чтобы он получал из файла bdconnection
         PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
-        preparedStatement.setInt(1, 1);
-
-        System.out.println(preparedStatement);
+        preparedStatement.setInt(1, LibraryAbonamentId);
 
         ResultSet rs = preparedStatement.executeQuery();
-        // обрабатываем полученный результат запроса и добавляем в обьект, к которому сделан DAO
+
         while (rs.next()) {
             lb.setId(rs.getInt("id"));
             lb.setStatus(rs.getString("status"));
-            lb.setStartDate(rs.getDate("start_data"));
-            lb.setEndDate(rs.getDate("end_data"));
-            System.out.println(lb.getId() + "," + lb.getStatus() + "," + lb.getStartDate() + "," + lb.getEndDate());
+            lb.setStartDate(rs.getDate("start_date"));
+            lb.setEndDate(rs.getDate("end_date"));
+            System.out.println(lb.getId() + "," +
+                               lb.getStatus() + "," +
+                               lb.getStartDate() + "," +
+                               lb.getEndDate());
         }
         return lb;
     }

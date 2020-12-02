@@ -10,23 +10,27 @@ import java.sql.SQLException;
 
 public class GroupDao {
     private static final String QUERY = "select * from groups where id =?";
+    private Connection connection;
+
+    public GroupDao(Connection connection) {
+        this.connection = connection;
+    }
 
     public Group getGroup(int groupId) throws SQLException {
         Group group = new Group();
-        Connection connection = null;
-        //Доделать на 16 строчке код таким образов , чтобы он получал из файла bdconnection
         PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
-        preparedStatement.setInt(1, 1);
+        preparedStatement.setInt(1, groupId);
 
-        System.out.println(preparedStatement);
+
 
         ResultSet rs = preparedStatement.executeQuery();
-        // обрабатываем полученный результат запроса и добавляем в обьект, к которому сделан DAO
+
         while (rs.next()) {
             group.setId(rs.getInt("id"));
             group.setName(rs.getString("name"));
 
-            System.out.println(group.getId() + "," + group.getName());
+            System.out.println(group.getId() + "," +
+                    group.getName());
         }
         return group;
     }

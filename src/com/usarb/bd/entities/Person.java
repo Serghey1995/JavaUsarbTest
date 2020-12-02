@@ -87,9 +87,7 @@ public class Person {
         this.address = address;
     }
 
-    public LibraryAbonament getLibraryAbonament() {
-        return libraryAbonament;
-    }
+    public LibraryAbonament getLibraryAbonament() { return libraryAbonament; }
 
     public void setLibraryAbonament(LibraryAbonament libraryAbonament) {
         this.libraryAbonament = libraryAbonament;

@@ -1,11 +1,8 @@
 package com.usarb.bd.entities;
 
-import com.usarb.bd.entities.Discipline;
-import com.usarb.bd.entities.Group;
-
 import java.util.List;
 
-public class Student {
+public class Student extends Person{
     private List<Discipline> disciplines;
     private Group group;
 

@@ -1,7 +1,8 @@
 package com.usarb.bd.entities;
 
-public class Teacher {
+public class Teacher extends Person{
     private double salary;
+
 
     public double getSalary() {
         return salary;
