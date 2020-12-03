@@ -1,3 +1,5 @@
+<%@ page import="com.usarb.bd.entities.Phone" %>
+<%@ page import="com.usarb.bd.entities.Student" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -28,7 +30,7 @@
         <th>Action</th></tr>
 
 
-<c:forEach var = "Person" items="${listPersons}" >
+<c:forEach var = "Student" items="${listStudents}" >
 
     <tr>
         <td><input type="checkbox"></td>
@@ -36,29 +38,35 @@
             <! картинка >
         </td>
     <td>
-        <c:out value = "${Person.firstName}"/>
-        <c:out value = "${Person.lastName}"/>
+        <c:out value = "${Student.firstName}"/>
+        <c:out value = "${Student.lastName}"/>
     </td>
-        <td><c:out value = "${Person.dateOfBirth}"/></td>
-        <td><c:out value = "${String.valueOf(Person.gender)}"/></td>
-        <td> <c:out value = "${Person.mail}"/></td>
+        <td><c:out value = "${Student.dateOfBirth}"/></td>
+        <td><c:out value = "${String.valueOf(Student.gender)}"/></td>
+        <td> <c:out value = "${Student.mail}"/></td>
         <td>
-            <c:out value = "${Person.address.country}"/>
-         <c:out value = "${Person.address.city}"/>
-         <c:out value = "${Person.address.address}"/>
+            <c:out value = "${Student.address.country}"/>
+         <c:out value = "${Student.address.city}"/>
+         <c:out value = "${Student.address.address}"/>
         </td>
         <td>
-    <c:forEach var = "Phone" items="${Person.phones}" >
+    <c:if test="${Student.phones.size() !=0}" >
+        <c:forEach var = "Phone" items="${Student.phones}" >
             <c:out value = "${Phone.type.name}"/>
             <c:out value = "${Phone.value}"/>
-        <br/>
-    </c:forEach>
-
+            <br/>
+        </c:forEach>
+    </c:if>
+    <c:if test="${Student.phones.size() ==0}" >
+        Numbers doesn`t exists
+    </c:if>
 
         </td>
-        <td><c:out value = "${Person.libraryAbonament.status}"/></td>
+        <td><c:out value = "${Student.libraryAbonament.status}"/></td>
         <td>
-            <! mark >
+<%--    <c:forEach var = "Student" items="${listAverage}" >--%>
+<%--        <c:out value = "${Average}"/>--%>
+<%--    </c:forEach>--%>
         </td>
         <td>
              <button type="submit">Edit</button>

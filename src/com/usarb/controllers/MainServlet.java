@@ -18,7 +18,7 @@ import java.util.List;
 public class MainServlet extends HttpServlet {
 private PersonService personService;
 private AddressService addressService;
-private AverageService averageService;
+//private AverageService averageService;
 private DisciplineService disciplineService;
 private GroupService groupService;
 private LibraryAbonamentService libraryAbonamentService;
@@ -31,7 +31,7 @@ private TeacherService teacherService;
 public void init(){
     personService = new PersonService();
     addressService = new AddressService();
-    averageService = new AverageService();
+ //   averageService = new AverageService();
     disciplineService = new DisciplineService();
     groupService = new GroupService();
     libraryAbonamentService = new LibraryAbonamentService();
@@ -48,9 +48,10 @@ public void init(){
             throws IOException, ServletException {
           response.setContentType("text/html");
         try {
-            List<Person> p = personService.getPersonList();
-
-            request.setAttribute("listPersons", p);
+            List<Student> s = studentService.getStudentList();
+           // List<Average> a = averageService.getAverageList();
+            request.setAttribute("listStudents", s);
+        //    request.setAttribute("listAverage", a);
             getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
        } catch (SQLException throwables) {
         throwables.printStackTrace();

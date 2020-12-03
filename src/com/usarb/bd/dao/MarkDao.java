@@ -34,12 +34,12 @@ public class MarkDao {
             mark.setDiscipline(disciplineDao.getDiscipline(rs.getInt("discipline_id")));
            mark.setTeacher(teacherDao.getTeacher(rs.getInt("teacher_id")));
             mark.setCreatedDate(rs.getDate("create_data"));
-            System.out.println(mark.getId() + "," +
-                    mark.getValue() + "," +
-                    mark.getCreatedDate() + "," +
-                    mark.getDiscipline() + "," +
-                    mark.getTeacher() + "," +
-                    mark.getStudent() );
+//            System.out.println(mark.getId() + "," +
+//                    mark.getValue() + "," +
+//                    mark.getCreatedDate() + "," +
+//                    mark.getDiscipline() + "," +
+//                    mark.getTeacher() + "," +
+//                    mark.getStudent() );
         }
         return mark;
     }

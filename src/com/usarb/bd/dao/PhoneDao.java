@@ -68,9 +68,7 @@ public class PhoneDao {
             phone.setType(phoneTypeDao.getPhoneType(rs.getInt("type_id")));
             phone.setValue(rs.getString("value"));
             phones.add(phone);
-
         }
-
         return phones;
     }
 }

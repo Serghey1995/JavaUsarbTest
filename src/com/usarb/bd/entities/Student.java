@@ -5,6 +5,15 @@ import java.util.List;
 public class Student extends Person{
     private List<Discipline> disciplines;
     private Group group;
+    private List<Average> averages;
+
+    public List<Average> getAverages() {
+        return averages;
+    }
+
+    public void setAverages(List<Average> averages) {
+        this.averages = averages;
+    }
 
     public List<Discipline> getDisciplines() {
         return disciplines;

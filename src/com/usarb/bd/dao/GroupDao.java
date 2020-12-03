@@ -1,6 +1,5 @@
 package com.usarb.bd.dao;
 
-import com.usarb.bd.entities.Address;
 import com.usarb.bd.entities.Group;
 
 import java.sql.Connection;

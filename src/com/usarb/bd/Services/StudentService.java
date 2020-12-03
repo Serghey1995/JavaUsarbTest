@@ -6,6 +6,7 @@ import com.usarb.bd.entities.Student;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class StudentService {
     private StudentDao studentDao;
@@ -18,6 +19,8 @@ public class StudentService {
         return studentDao.getStudent(1);
     }
 
-
+public List<Student> getStudentList() throws SQLException {
+        return studentDao.getStudentList();
+}
 
 }

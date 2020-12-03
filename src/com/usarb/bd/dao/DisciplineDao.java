@@ -14,10 +14,10 @@ public class DisciplineDao {
     }
 
 
-    public Discipline getDiscipline(int disciplineId) throws SQLException {
+    public Discipline getDiscipline(int studentId) throws SQLException {
         Discipline discipline = new Discipline();
         PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
-        preparedStatement.setInt(1, disciplineId);
+        preparedStatement.setInt(1, studentId);
 
 
         ResultSet rs = preparedStatement.executeQuery();
